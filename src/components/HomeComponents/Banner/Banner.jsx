@@ -1,6 +1,6 @@
 export default function Banner() {
   return (
-    <div className="bg-[#140342] py-20 px-5 lg:px-0 md:min-h-screen flex items-center justify-center">
+    <div className="bg-[#140342] py-20 px-5 lg:px-0 lg:min-h-screen flex items-center justify-center">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-5 lg:gap-10">
         <div className="text-center md:text-start">
           <h2 className="text-white text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">

@@ -8,7 +8,7 @@ function NavbarLink({ to, children }) {
       to={to}
       className={({ isActive }) =>
         isActive
-          ? "text-blue-500 border-b-2 border-blue-500 pb-1"
+          ? "text-green-400 border-b-2 border-green-400"
           : "text-gray-700 lg:text-white hover:text-blue-500 transition-colors duration-300"
       }
     >
@@ -67,7 +67,7 @@ export default function Navbar() {
         <div className="hidden lg:block">
           <NavLink
             to="/register"
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-transform duration-300 transform hover:scale-105"
+            className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-white hover:text-blue-600 transition-transform duration-300 transform hover:scale-105 "
           >
             Register
           </NavLink>
