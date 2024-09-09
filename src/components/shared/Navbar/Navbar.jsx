@@ -53,8 +53,8 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="bg-[#140342] shadow-sm sticky top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6">
+    <nav className="bg-[#140342] shadow-sm sticky top-0 z-50 border-b border-gray-700">
+      <div className="container mx-auto flex justify-between items-center py-5 px-6">
         {/* Left side - Logo */}
         <div className="text-2xl font-bold text-white">
           <Link to={"/"}>EduCare</Link>
