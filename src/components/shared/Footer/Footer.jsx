@@ -15,7 +15,7 @@ function FooterLink({ to, children }) {
 
 export default function Footer() {
   return (
-    <div className="bg-blue-950 py-20">
+    <div className="bg-blue-950 py-20 bg-[url('')]">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {/* about section  */}
         <div>
