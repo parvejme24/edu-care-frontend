@@ -9,7 +9,7 @@ function NavbarLink({ to, children }) {
       className={({ isActive }) =>
         isActive
           ? "text-blue-500 border-b-2 border-blue-500 pb-1"
-          : "text-gray-700 hover:text-blue-500 transition-colors duration-300"
+          : "text-gray-700 lg:text-white hover:text-blue-500 transition-colors duration-300"
       }
     >
       {children}
@@ -53,10 +53,10 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className="bg-[#140342] shadow-sm sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         {/* Left side - Logo */}
-        <div className="text-2xl font-bold text-blue-600">
+        <div className="text-2xl font-bold text-white">
           <Link to={"/"}>EduCare</Link>
         </div>
 
@@ -80,9 +80,9 @@ export default function Navbar() {
             className="text-gray-700 focus:outline-none transform hover:scale-110 transition-transform duration-300"
           >
             {menuOpen ? (
-              <FaTimes className="h-8 w-8 text-blue-600" />
+              <FaTimes className="h-8 w-8 text-white" />
             ) : (
-              <FaBars className="h-8 w-8 text-blue-600" />
+              <FaBars className="h-8 w-8 text-white" />
             )}
           </button>
         </div>
