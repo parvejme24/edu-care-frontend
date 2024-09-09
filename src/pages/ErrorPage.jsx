@@ -4,7 +4,7 @@ import ERROR_IMAGE from "../assets/404.png";
 
 export default function ErrorPage() {
   return (
-    <div className="min-h-screen flex justify-center items-center">
+    <div className="min-h-screen py-10 flex justify-center items-center bg-[#FEFBF4]">
       <div className="px-5 md:px-0 container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
         <div>
           <img src={ERROR_IMAGE} alt="" />
