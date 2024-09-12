@@ -1,12 +1,11 @@
 import "react-accessible-accordion/dist/fancy-example.css";
-import { FaMobileRetro } from "react-icons/fa6";
 import { GiEarthAfricaEurope, GiGraduateCap } from "react-icons/gi";
-import { MdAlternateEmail, MdLocationCity } from "react-icons/md";
 import { PiCertificate, PiUsersThree } from "react-icons/pi";
-import { TbWorldWww } from "react-icons/tb";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { useParams } from "react-router-dom";
+import AboutCollege from "../components/CollegeDetailsComponents/AboutCollege/AboutCollege";
 import CollegeReview from "../components/CollegeDetailsComponents/CollegeReview/CollegeReview";
+import Departments from "../components/CollegeDetailsComponents/Departments/Departments";
 import PageHeader from "../components/shared/PageHeader/PageHeader";
 import { useGetCollegeByIdQuery } from "../redux/apis/collegeApi";
 
@@ -53,62 +52,16 @@ export default function CollegeDetails() {
         </div>
 
         <div className="mt-10">
-          <h2 className="text-2xl font-bold pb-2">Departments</h2>
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
-            {college.departments.map((department) => (
-              <div
-                key={department.title}
-                className="text-center bg-blue-50 p-5 rounded-sm space-y-3 hover:shadow-md"
-              >
-                <img src={department.image} alt="" className="w-20 mx-auto" />
-                <h4 className="text-xl font-bold">{department.title}</h4>
-              </div>
-            ))}
-          </div>
+          <Departments departments={college.departments} />
         </div>
 
         {/* contact section  */}
-        <div className="mt-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 text-center">
-            {/* address  */}
-            <div className="p-5 bg-blue-50 rounded">
-              <span className="text-5xl text-blue-600 flex justify-center pb-2">
-                <MdLocationCity />
-              </span>
-              <h4 className="text-2xl font-bold ">Location</h4>
-              <p>
-                {college.location.city}, {college.location.country}
-              </p>
-            </div>
-
-            {/* email  */}
-            <div className="p-5 bg-blue-50 rounded">
-              <span className="text-5xl text-blue-600 flex justify-center pb-2">
-                <MdAlternateEmail />
-              </span>
-              <h4 className="text-2xl font-bold ">Email</h4>
-              <p>{college.email}</p>
-            </div>
-
-            {/* email  */}
-            <div className="p-5 bg-blue-50 rounded">
-              <span className="text-5xl text-blue-600 flex justify-center pb-2">
-                <FaMobileRetro />
-              </span>
-              <h4 className="text-2xl font-bold ">Phone</h4>
-              <p>{college.phone}</p>
-            </div>
-
-            {/* email  */}
-            <div className="p-5 bg-blue-50 rounded">
-              <span className="text-5xl text-blue-600 flex justify-center pb-2">
-                <TbWorldWww />
-              </span>
-              <h4 className="text-2xl font-bold ">Website</h4>
-              <p>{college.website}</p>
-            </div>
-          </div>
-        </div>
+        <AboutCollege
+          location={college.location}
+          email={college.email}
+          phone={college.phone}
+          website={college.website}
+        />
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mt-10 border border-blue-50 shadow-sm rounded-lg">
           <div className="text-center p-5 border border-blue-100">
