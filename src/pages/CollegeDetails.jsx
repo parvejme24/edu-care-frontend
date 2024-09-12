@@ -6,6 +6,7 @@ import { PiCertificate, PiUsersThree } from "react-icons/pi";
 import { TbWorldWww } from "react-icons/tb";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { useParams } from "react-router-dom";
+import CollegeReview from "../components/CollegeDetailsComponents/CollegeReview/CollegeReview";
 import PageHeader from "../components/shared/PageHeader/PageHeader";
 import { useGetCollegeByIdQuery } from "../redux/apis/collegeApi";
 
@@ -66,6 +67,7 @@ export default function CollegeDetails() {
           </div>
         </div>
 
+        {/* contact section  */}
         <div className="mt-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5 text-center">
             {/* address  */}
@@ -145,6 +147,11 @@ export default function CollegeDetails() {
               Students Enrolled
             </p>
           </div>
+        </div>
+
+        {/* review section  */}
+        <div className="pt-14">
+          <CollegeReview />
         </div>
       </div>
     </div>
