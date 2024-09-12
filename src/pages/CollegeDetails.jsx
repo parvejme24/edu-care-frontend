@@ -1,6 +1,9 @@
 import "react-accessible-accordion/dist/fancy-example.css";
+import { FaMobileRetro } from "react-icons/fa6";
 import { GiEarthAfricaEurope, GiGraduateCap } from "react-icons/gi";
+import { MdAlternateEmail, MdLocationCity } from "react-icons/md";
 import { PiCertificate, PiUsersThree } from "react-icons/pi";
+import { TbWorldWww } from "react-icons/tb";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { useParams } from "react-router-dom";
 import PageHeader from "../components/shared/PageHeader/PageHeader";
@@ -33,12 +36,7 @@ export default function CollegeDetails() {
       <div className="container mx-auto py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div className="relative">
-            <img src={college.image} alt="" className="w-3/4 rounded" />
-            <img
-              src={college.thumbnailImage}
-              alt=""
-              className="absolute right-0 -bottom-10 w-1/2 bg-white p-2 rounded-lg"
-            />
+            <img src={college.image} alt="" className="rounded" />
           </div>
           <div>
             <h3 className="text-2xl font-bold uppercase flex items-center gap-3">
@@ -47,7 +45,7 @@ export default function CollegeDetails() {
                 alt=""
                 className="w-10"
               />{" "}
-              {college.collegeName}
+              {college.collegeName} ({college.shortName})
             </h3>
             <p>{college.extablishedYear}</p>
           </div>
@@ -65,6 +63,48 @@ export default function CollegeDetails() {
                 <h4 className="text-xl font-bold">{department.title}</h4>
               </div>
             ))}
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 text-center">
+            {/* address  */}
+            <div className="p-5 bg-blue-50 rounded">
+              <span className="text-5xl text-blue-600 flex justify-center pb-2">
+                <MdLocationCity />
+              </span>
+              <h4 className="text-2xl font-bold ">Location</h4>
+              <p>
+                {college.location.city}, {college.location.country}
+              </p>
+            </div>
+
+            {/* email  */}
+            <div className="p-5 bg-blue-50 rounded">
+              <span className="text-5xl text-blue-600 flex justify-center pb-2">
+                <MdAlternateEmail />
+              </span>
+              <h4 className="text-2xl font-bold ">Email</h4>
+              <p>{college.email}</p>
+            </div>
+
+            {/* email  */}
+            <div className="p-5 bg-blue-50 rounded">
+              <span className="text-5xl text-blue-600 flex justify-center pb-2">
+                <FaMobileRetro />
+              </span>
+              <h4 className="text-2xl font-bold ">Phone</h4>
+              <p>{college.phone}</p>
+            </div>
+
+            {/* email  */}
+            <div className="p-5 bg-blue-50 rounded">
+              <span className="text-5xl text-blue-600 flex justify-center pb-2">
+                <TbWorldWww />
+              </span>
+              <h4 className="text-2xl font-bold ">Website</h4>
+              <p>{college.website}</p>
+            </div>
           </div>
         </div>
 
