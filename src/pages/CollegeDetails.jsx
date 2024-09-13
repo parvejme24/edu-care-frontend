@@ -3,6 +3,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import { useParams } from "react-router-dom";
 import AboutCollege from "../components/CollegeDetailsComponents/AboutCollege/AboutCollege";
 import CollegeReview from "../components/CollegeDetailsComponents/CollegeReview/CollegeReview";
+import CourseResearch from "../components/CollegeDetailsComponents/CourseResearch/CourseResearch";
 import Departments from "../components/CollegeDetailsComponents/Departments/Departments";
 import GeneralInfo from "../components/CollegeDetailsComponents/GeneralInfo/GeneralInfo";
 import PageHeader from "../components/shared/PageHeader/PageHeader";
@@ -62,6 +63,15 @@ export default function CollegeDetails() {
           phone={college.phone}
           website={college.website}
         />
+
+        {/* course and research section  */}
+        <div className="mt-10">
+          <CourseResearch
+            courses={college.coursesOffered}
+            researches={college.researchAreas}
+            sportsFacilities={college.sportsFacilities}
+          />
+        </div>
 
         {/* general info  */}
         <div className="mt-10">
