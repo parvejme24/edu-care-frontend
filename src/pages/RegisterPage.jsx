@@ -6,7 +6,7 @@ import {
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle, FaSpinner } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { auth } from "../firebase/firebase.config";
 
 export default function RegisterPage() {
@@ -159,6 +159,15 @@ export default function RegisterPage() {
               </>
             )}
           </button>
+
+          <p className="text-center mt-3">
+            <small>
+              Already have an account?{" "}
+              <Link to={"/login"} className="hover:underline duration-300">
+                Login
+              </Link>
+            </small>
+          </p>
         </div>
       </div>
     </div>
