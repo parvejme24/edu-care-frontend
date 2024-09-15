@@ -8,6 +8,7 @@ import {
 import { MdEvent, MdWeb } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 export default function CollegeCard({ college }) {
   const navigate = useNavigate();
 
@@ -27,14 +28,14 @@ export default function CollegeCard({ college }) {
     email,
     phone,
     rating,
-    events,
+    events = [],
   } = college || {};
 
   return (
     <div className="p-6 border rounded-lg shadow-md bg-white hover:shadow-lg transform hover:-translate-y-2 transition duration-300 ease-in-out">
       <div className="relative">
         <img
-          src={image}
+          src={image || "https://via.placeholder.com/300"}
           alt={`${collegeName || "College"} campus`}
           className="rounded-md h-48 w-full object-cover"
         />
@@ -48,12 +49,7 @@ export default function CollegeCard({ college }) {
       <div className="pt-4">
         <h3 className="text-2xl font-bold uppercase pt-2 text-[#140342] flex items-center">
           <FaGraduationCap className="mr-2" />
-          {collegeName}{" "}
-          {shortName && (
-            <span className="text-lg font-semibold text-gray-500 ml-1">
-              ({shortName})
-            </span>
-          )}
+          {collegeName} {shortName && shortName}
         </h3>
         {establishedYear && (
           <p className="text-gray-600 text-sm mt-1">
@@ -112,18 +108,20 @@ export default function CollegeCard({ college }) {
         <div className="mt-3 flex items-center space-x-4 text-sm text-gray-600">
           <MdEvent className="text-[#140342] mr-1" />
           <span>
-            {events?.length > 0
+            {events.length > 0
               ? `${events.length} Upcoming Events`
               : "No Upcoming Events"}
           </span>
         </div>
 
-        <button
-          onClick={() => handleViewDetails(_id)}
-          className="mt-4 bg-[#140342] text-white px-4 py-2 rounded-md hover:bg-[#100230] transition duration-300"
-        >
-          View Details
-        </button>
+        {_id && (
+          <button
+            onClick={() => handleViewDetails(_id)}
+            className="mt-4 bg-[#140342] text-white px-4 py-2 rounded-md hover:bg-[#100230] transition duration-300"
+          >
+            View Details
+          </button>
+        )}
       </div>
     </div>
   );

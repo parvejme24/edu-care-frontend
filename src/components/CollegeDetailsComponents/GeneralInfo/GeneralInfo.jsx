@@ -4,7 +4,6 @@ import { PiCertificate, PiUsersThree } from "react-icons/pi";
 export default function GeneralInfo() {
   return (
     <div>
-      {" "}
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 border border-blue-50 shadow-sm rounded-lg">
         <div className="text-center p-5 border border-blue-100">
           <span className="text-5xl text-blue-600 text-center flex justify-center">

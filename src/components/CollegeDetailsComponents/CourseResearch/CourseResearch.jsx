@@ -8,7 +8,7 @@ export default function CourseResearch({
   sportsFacilities,
 }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-3">
       {/* courses side  */}
       <div>
         <h2 className="text-2xl font-bold flex items-center gap-2 pb-2">

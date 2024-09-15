@@ -21,11 +21,6 @@ export default function CollegeDetails() {
     return <div className="text-white">Error loading college details</div>;
   }
 
-  const images = college.campusImages.map((image) => ({
-    original: image,
-    thumbnail: image,
-  }));
-
   return (
     <div>
       <PageHeader
@@ -47,25 +42,30 @@ export default function CollegeDetails() {
               />{" "}
               {college.collegeName} ({college.shortName})
             </h3>
-            <p>{college.extablishedYear}</p>
+            <p className="text-blac">
+              Established in: {college.establishedYear}
+            </p>
+            <p className="mt-2 text-gray-500">{college.description}</p>
           </div>
         </div>
 
         {/* departments section  */}
-        <div className="mt-10">
+        <div className="mt-20">
           <Departments departments={college.departments} />
         </div>
 
         {/* about section  */}
-        <AboutCollege
-          location={college.location}
-          email={college.email}
-          phone={college.phone}
-          website={college.website}
-        />
+        <div className="mt-20">
+          <AboutCollege
+            location={college.location}
+            email={college.email}
+            phone={college.phone}
+            website={college.website}
+          />
+        </div>
 
         {/* course and research section  */}
-        <div className="mt-10">
+        <div className="mt-20">
           <CourseResearch
             courses={college.coursesOffered}
             researches={college.researchAreas}
@@ -74,12 +74,12 @@ export default function CollegeDetails() {
         </div>
 
         {/* general info  */}
-        <div className="mt-10">
+        <div className="mt-20">
           <GeneralInfo />
         </div>
 
         {/* review section  */}
-        <div className="pt-14">
+        <div className="pt-20">
           <CollegeReview />
         </div>
       </div>
